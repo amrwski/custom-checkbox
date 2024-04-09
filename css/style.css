@@ -1,0 +1,42 @@
+.native-checkbox {
+  width: fit-content;
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.checkbox-label {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked + .custom-checkbox {
+  background-image: url("../assets/images/checkmark.svg");
+  background-color: #000;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* This is to remove the default focus styling */
+.custom-checkbox:focus {
+  outline: none;
+}
+
+#native-checkbox:focus-visible + .custom-checkbox,
+.custom-checkbox.focus-visible {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px blue;
+}
